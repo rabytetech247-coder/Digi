@@ -1,0 +1,16 @@
+﻿name = "rabyte-tech"
+compatibility_date = "2024-03-20"
+compatibility_flags = ["nodejs_compat"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "rabyte_d1"
+database_id = "4901e8f2-89da-41b4-b841-893d18e9a4f4"
+
+[[r2_buckets]]
+binding = "ASSETS_BUCKET"
+bucket_name = "rabyte-store-assets"
+
+[[kv_namespaces]]
+binding = "KV"
+id = "78a1bc4903df4819a9d94318c4e09f12"
