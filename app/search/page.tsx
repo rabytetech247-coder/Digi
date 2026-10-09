@@ -2,6 +2,8 @@ import PageShell from "@/components/PageShell";
 import ProductCard from "@/components/ProductCard";
 import { products } from "@/data/products";
 
+export const runtime = 'edge';
+
 export default async function Search({ searchParams }: { searchParams: Promise<{ q?: string }> }) {
   const params = await searchParams;
   const q = params.q?.toLowerCase() || "";
