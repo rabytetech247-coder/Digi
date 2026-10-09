@@ -22,8 +22,7 @@ export default function Footer() {
           <Link href="/categories">Categories</Link>
           <Link href="/featured">Featured Products</Link>
           <Link href="/top-rated">Top Rated</Link>
-          <Link href="/resources">Resources</Link>
-          <Link href="/blog">Blog</Link>
+          <Link href="/blog">Resources</Link>
         </div>
 
         <div className="footer-link-col">

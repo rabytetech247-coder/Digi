@@ -10,11 +10,11 @@ export default function Home() {
     <main>
       <HeroSlider />
 
-      <section className="category-section container pt-10">
-        <div className="section-header">
+      <section className="category-section container section-spacing">
+        <div className="section-header fade-in-up">
           <div className="header-left">
-            <h2><span className="icon-box icon-yellow"><Icon name="crown" size={24} /></span> Featured Products</h2>
-            <p>Hand-picked products worth discovering.</p>
+            <h2><span className="icon-box icon-yellow"><Icon name="crown" size={24} /></span> Featured Tools & Assets</h2>
+            <p>Hand-picked AI systems and SaaS templates worth discovering.</p>
           </div>
           <Link href="/featured" className="view-all-link">View All Featured &rarr;</Link>
         </div>
@@ -23,11 +23,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="category-section container pt-10">
-        <div className="section-header">
+      <section className="category-section container section-spacing">
+        <div className="section-header fade-in-up">
           <div className="header-left">
-            <h2><span className="icon-box icon-lightning"><Icon name="lightning" size={24} /></span> Newly Added</h2>
-            <p>Check out the latest digital products from our creators.</p>
+            <h2><span className="icon-box icon-lightning"><Icon name="lightning" size={24} /></span> Newly Added Assets</h2>
+            <p>Check out the latest digital resources from our top creators.</p>
           </div>
           <Link href="/products" className="view-all-link">View All &rarr;</Link>
         </div>
@@ -36,11 +36,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="category-section container pt-10 pb-10">
-        <div className="section-header">
+      <section className="category-section container section-spacing">
+        <div className="section-header fade-in-up">
           <div className="header-left">
-            <h2><span className="icon-box icon-yellow"><Icon name="star" size={24} /></span> Top Rated Products</h2>
-            <p>Explore the highest rated products from our community.</p>
+            <h2><span className="icon-box icon-yellow"><Icon name="star" size={24} /></span> Top Rated Systems</h2>
+            <p>Explore the highest-rated architectures from our community.</p>
           </div>
           <Link href="/top-rated" className="view-all-link">View All &rarr;</Link>
         </div>
@@ -49,11 +49,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="category-section container pt-10 pb-10">
-        <div className="section-header">
+      <section className="category-section container section-spacing">
+        <div className="section-header fade-in-up">
           <div className="header-left">
-            <h2><span className="icon-box icon-lightning"><Icon name="menu" size={24} /></span> All Products</h2>
-            <p>Browse our entire catalog of digital products.</p>
+            <h2><span className="icon-box icon-lightning"><Icon name="menu" size={24} /></span> All Templates</h2>
+            <p>Browse our entire catalog of ready-to-use solutions.</p>
           </div>
           <Link href="/products" className="view-all-link">Explore Directory &rarr;</Link>
         </div>
@@ -66,8 +66,8 @@ export default function Home() {
         <div className="container cta-container">
           <div className="cta-content">
             <span className="cta-badge">FOR CREATORS</span>
-            <h2>Have a digital product?</h2>
-            <p>List it for free and let more people discover it.</p>
+            <h2>Have a SaaS or AI tool?</h2>
+            <p>List it for free and let other developers discover it.</p>
             <div className="cta-features">
               <span><Icon name="check" size={16} /> No listing fee</span>
               <span><Icon name="check" size={16} /> Reach more customers</span>
@@ -81,8 +81,8 @@ export default function Home() {
         </div>
       </section>
       
-      <section className="category-section container pt-10 pb-10">
-        <div className="section-header">
+      <section className="category-section container section-spacing">
+        <div className="section-header fade-in-up">
           <div className="header-left">
             <h2><span className="icon-box icon-orange"><Icon name="grid" size={24} /></span> Browse by Category</h2>
             <p>Explore digital products in your area of interest.</p>

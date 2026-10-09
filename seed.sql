@@ -1,0 +1,1 @@
+INSERT INTO users (id, email, password_hash, username, role, created_at) VALUES ('usr_admin', 'admin@rabyte.com', '$2b$10$Xh3LR3t0I0oM5QK/eWCmk.iaFl4LyDWCEarAsW87eoAm26sD/dplK', 'admin', 'admin', 1700000000);

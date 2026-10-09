@@ -12,7 +12,7 @@ export default function Navbar() {
           <Link href="/categories">Categories</Link>
           <Link href="/featured">Featured</Link>
           <div className="nav-dropdown">
-            <Link href="/resources">Resources <Icon name="chevron" size={14}/></Link>
+            <Link href="/blog">Resources <Icon name="chevron" size={14}/></Link>
           </div>
         </div>
         

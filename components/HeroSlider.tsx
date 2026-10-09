@@ -5,39 +5,39 @@ import Icon from "./Icon";
 
 const slides = [
   {
-    kicker: "FEATURED AI RESOURCES",
-    title: "Master AI Workflows in 2026",
-    desc: "Unlock the ultimate AI creator playbook. Automate your tasks and scale your content instantly.",
-    bg: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=2000&auto=format&fit=crop",
-    link: "/categories/ai-tools"
-  },
-  {
-    kicker: "PREMIUM TEMPLATES",
-    title: "Organize Your Life with Notion",
-    desc: "Complete life OS templates to track your habits, goals, and daily tasks seamlessly.",
-    bg: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=2000&auto=format&fit=crop",
-    link: "/categories/templates"
-  },
-  {
-    kicker: "GROWTH GUIDES",
-    title: "The Freelancer Playbook",
-    desc: "A step-by-step guide to finding high-paying clients and building a sustainable career.",
-    bg: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2000&auto=format&fit=crop",
+    kicker: "WELCOME TO RABYTE-TECH",
+    title: "Discover Premium Digital Products & Assets",
+    desc: "The premier directory for Notion templates, e-books, design resources, and marketing funnels. Built by creators, for creators.",
+    bg: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2000&auto=format&fit=crop",
     link: "/products"
   },
   {
-    kicker: "CREATIVE ASSETS",
-    title: "Ultimate Social Media Kit",
-    desc: "500+ customizable Canva templates designed to boost engagement and followers.",
-    bg: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?q=80&w=2000&auto=format&fit=crop",
-    link: "/categories"
+    kicker: "FOR CREATORS",
+    title: "Zero Fees. Direct Links.",
+    desc: "Import your Gumroad, Lemon Squeezy, or custom checkout links. We drive traffic to your digital products, you keep 100% of the sales.",
+    bg: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=2000&auto=format&fit=crop",
+    link: "/submit"
   },
   {
-    kicker: "DEVELOPMENT COURSES",
-    title: "Full-Stack Web Mastery",
-    desc: "Go from beginner to pro with comprehensive modern web development courses.",
+    kicker: "E-BOOKS & GUIDES",
+    title: "Scale Your Creator Business",
+    desc: "Find proven marketing playbooks, audience growth guides, and step-by-step strategies to monetize your audience effectively.",
+    bg: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=2000&auto=format&fit=crop",
+    link: "/categories/ebooks"
+  },
+  {
+    kicker: "NOTION TEMPLATES",
+    title: "Master Your Productivity",
+    desc: "Explore aesthetic and highly functional Notion templates for finance tracking, project management, and daily journaling.",
     bg: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2000&auto=format&fit=crop",
-    link: "/categories/courses"
+    link: "/categories/templates"
+  },
+  {
+    kicker: "DESIGN & UI ASSETS",
+    title: "Premium Design Resources",
+    desc: "Elevate your brand with high-quality UI kits, slide deck templates, and exclusive icon packs crafted by top designers.",
+    bg: "https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=2000&auto=format&fit=crop",
+    link: "/categories/design"
   }
 ];
 

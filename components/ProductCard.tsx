@@ -19,7 +19,7 @@ export default function ProductCard({ p, featured = false }: { p: Product, featu
             <Icon name="star" size={12} />
             <strong>{p.rating}</strong> <span>({p.reviews})</span>
           </div>
-          <div className="creator">
+          <div className="pc-creator">
             {p.seller || "Creator"}
           </div>
         </div>
