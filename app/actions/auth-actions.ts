@@ -1,7 +1,7 @@
 "use server";
 
 import { redirect } from "next/navigation";
-import bcrypt from "bcryptjs";
+import { compareSync, hashSync } from "bcrypt-ts";
 import { getDb } from "@/lib/db";
 import { createSession, logout } from "@/lib/auth";
 
@@ -16,7 +16,7 @@ export async function loginAction(prevState: any, formData: FormData) {
   const db = getDb();
   const user = await db.prepare("SELECT * FROM users WHERE email = ?").bind(email).first<any>();
 
-  if (!user || !bcrypt.compareSync(password, user.password_hash)) {
+  if (!user || !compareSync(password, user.password_hash)) {
     return { error: "Invalid email or password" };
   }
 
@@ -48,7 +48,7 @@ export async function registerAction(prevState: any, formData: FormData) {
   }
 
   const id = crypto.randomUUID();
-  const hash = bcrypt.hashSync(password, 10);
+  const hash = hashSync(password, 10);
 
   await db.prepare(`
     INSERT INTO users (id, email, password_hash, username, role, created_at)
