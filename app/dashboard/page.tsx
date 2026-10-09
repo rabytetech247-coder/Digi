@@ -1,4 +1,3 @@
-import PageShell from "@/components/PageShell";
 import { getCurrentUser } from "@/lib/auth";
 import { getDb } from "@/lib/db";
 import { redirect } from "next/navigation";
@@ -28,49 +27,32 @@ export default async function Dashboard() {
   `).bind(user.id).first<any>()) || { avg_rating: 0 };
 
   return (
-    <PageShell>
-      <section className="dashboard">
-        <div className="container dashboard-grid">
-          <aside className="side">
-            <b>Seller Dashboard</b>
-            <a href="/dashboard" style={{color: "var(--blue)", fontWeight: 700}}>Overview</a>
-            <a href="/dashboard/products">Products</a>
-            <a href="/dashboard/products/new">Add product</a>
-            <a href="/dashboard/analytics">Analytics</a>
-            <a href="/dashboard/reviews">Reviews</a>
-            <a href="/dashboard/blog">Blog</a>
-            <a href="/dashboard/profile">Profile / Storefront</a>
-            <form action="/api/logout" method="POST"><button type="submit" style={{ background: "none", border: "none", color: "#656c76", padding: 8, fontSize: 11, cursor: "pointer", marginTop: 10 }}>Log out</button></form>
-          </aside>
-          <section className="dash-main">
-            <small className="eyebrow">DASHBOARD</small>
-            <h1>Welcome, {user.name || user.username}</h1>
-            <div className="stat-grid">
-              <div><b>{products.length}</b><span>Published products</span></div>
-              <div><b>{stats.total_views || 0}</b><span>Page views</span></div>
-              <div><b>{stats.total_clicks || 0}</b><span>Outbound clicks</span></div>
-              <div><b>{(reviews.avg_rating || 0).toFixed(1)}</b><span>Average rating</span></div>
+    <section className="dash-main">
+      <small className="eyebrow">DASHBOARD</small>
+      <h1>Welcome, {user.name || user.username}</h1>
+      <div className="stat-grid">
+        <div><b>{products.length}</b><span>Published products</span></div>
+        <div><b>{stats.total_views || 0}</b><span>Page views</span></div>
+        <div><b>{stats.total_clicks || 0}</b><span>Outbound clicks</span></div>
+        <div><b>{(reviews.avg_rating || 0).toFixed(1)}</b><span>Average rating</span></div>
+      </div>
+      <div className="table-card" style={{ marginTop: 24 }}>
+        <h2>Your Products</h2>
+        {products.length === 0 ? (
+          <div className="notice">You haven't listed any products yet.</div>
+        ) : (
+          products.map(p => (
+            <div key={p.id} className="fake-row" style={{alignItems:"center"}}>
+              <div>
+                <b>{p.title}</b>
+                <small style={{display:"block", color:"#666"}}>{p.status}</small>
+              </div>
+              <span>{p.source_rating || 0} ★</span>
+              <a href={`/dashboard/products/${p.id}`} className="mini-button">Edit</a>
             </div>
-            <div className="table-card">
-              <h2>Your Products</h2>
-              {products.length === 0 ? (
-                <p>You haven't listed any products yet.</p>
-              ) : (
-                products.map(p => (
-                  <div key={p.id} className="fake-row" style={{alignItems:"center"}}>
-                    <div>
-                      <b>{p.title}</b>
-                      <small style={{display:"block", color:"#666"}}>{p.status}</small>
-                    </div>
-                    <span>{p.source_rating || 0} ★</span>
-                    <a href={`/dashboard/products/${p.id}`} className="mini-button">Edit</a>
-                  </div>
-                ))
-              )}
-            </div>
-          </section>
-        </div>
-      </section>
-    </PageShell>
+          ))
+        )}
+      </div>
+    </section>
   );
 }

@@ -21,7 +21,12 @@ export async function loginAction(prevState: any, formData: FormData) {
   }
 
   await createSession(user.id);
-  redirect("/dashboard");
+  
+  if (user.role === 'admin' || user.role === 'superadmin') {
+    redirect("/admin/panel");
+  } else {
+    redirect("/dashboard");
+  }
 }
 
 export async function registerAction(prevState: any, formData: FormData) {
@@ -46,9 +51,9 @@ export async function registerAction(prevState: any, formData: FormData) {
   const hash = bcrypt.hashSync(password, 10);
 
   await db.prepare(`
-    INSERT INTO users (id, email, password_hash, username, name, role, status)
-    VALUES (?, ?, ?, ?, ?, 'seller', 'active')
-  `).bind(id, email, hash, username, name).run();
+    INSERT INTO users (id, email, password_hash, username, role, created_at)
+    VALUES (?, ?, ?, ?, 'seller', ?)
+  `).bind(id, email, hash, username, Date.now()).run();
 
   await createSession(id);
   redirect("/dashboard");

@@ -1,1 +1,44 @@
-import PageShell from "@/components/PageShell";export default function Page(){return <PageShell><section className="dashboard"><div className="container dashboard-grid"><aside className="side admin"><b>Admin Console</b><a href="/admin">Overview</a><a href="/admin/submissions">Submissions</a><a href="/admin/products">Products</a><a href="/admin/users">Users</a><a href="/admin/categories">Categories</a><a href="/admin/reviews">Reviews</a><a href="/admin/featured">Featured</a><a href="/admin/advertising">Advertising</a><a href="/admin/blog">Blog</a><a href="/admin/reports">Reports</a><a href="/admin/emails">Emails</a><a href="/admin/analytics">Analytics</a><a href="/admin/settings">Settings</a></aside><section className="dash-main"><small className="eyebrow">ADMIN</small><h1>Users</h1><div className="stat-grid"><div><b>1,284</b><span>Products</span></div><div><b>92</b><span>Pending submissions</span></div><div><b>4,218</b><span>Users</span></div><div><b>38</b><span>Reports</span></div></div><div className="table-card"><h2>Users</h2><p>Admin UI template. Connect role-protected D1 queries and moderation actions here.</p><div className="fake-row"><b>AI Content Creator Vault</b><span>Pending review</span><span>Gumroad</span><button className="mini-button">Review</button></div><div className="fake-row"><b>Modern SaaS UI Kit</b><span>Published</span><span>Lemon Squeezy</span><button className="mini-button">Open</button></div></div></section></div></section></PageShell>}
+import { getDb } from "@/lib/db";
+
+export default async function AdminUsers() {
+  const db = getDb();
+  
+  // Fetch users from DB
+  const users = await db.prepare(`
+    SELECT id, email, username, name, role, status, trust_score, created_at 
+    FROM users 
+    ORDER BY created_at DESC
+  `).all<any>();
+
+  return (
+    <section className="dash-main">
+      <small className="eyebrow">ADMIN</small>
+      <h1>Users Management</h1>
+      
+      <div className="table-card" style={{ marginTop: 24 }}>
+        <h2>All Users ({users.results?.length || 0})</h2>
+        <p>Manage all registered users, roles, and trust scores.</p>
+        
+        {users.results?.length === 0 ? (
+          <div className="notice">No users found.</div>
+        ) : (
+          users.results?.map((user) => (
+            <div className="fake-row" key={user.id} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr auto', gap: '10px' }}>
+              <div>
+                <b>{user.name || user.username}</b>
+                <div style={{ fontSize: '0.8rem', color: '#666' }}>@{user.username}</div>
+              </div>
+              <span style={{ alignSelf: 'center' }}>{user.email}</span>
+              <span style={{ alignSelf: 'center', textTransform: 'uppercase', fontSize: '0.8rem' }}>{user.role}</span>
+              <span style={{ alignSelf: 'center' }}>Trust: {user.trust_score}</span>
+              <div style={{ alignSelf: 'center' }}>
+                <button className="mini-button" style={{ marginRight: 8 }}>Edit</button>
+                <button className="mini-button" style={{ background: '#fee' }}>Ban</button>
+              </div>
+            </div>
+          ))
+        )}
+      </div>
+    </section>
+  );
+}
