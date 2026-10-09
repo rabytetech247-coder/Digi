@@ -10,17 +10,9 @@ try {
     execSync('npx next build', { stdio: 'inherit' });
   } else {
     // We are at the top level Cloudflare CI execution step
-    console.log("=> Running Cloudflare next-on-pages builder...");
+    console.log("=> Running OpenNext Cloudflare builder...");
     process.env.INTERNAL_NEXT_BUILD = 'true';
-    execSync('npx @cloudflare/next-on-pages', { stdio: 'inherit' });
-    
-    // Cloudflare Workers deploy complains if we try to upload _worker.js as a static asset.
-    // We must ignore it from the assets directory so it only acts as our main entrypoint.
-    const fs = require('fs');
-    const path = require('path');
-    const assetsIgnorePath = path.join(process.cwd(), '.vercel', 'output', 'static', '.assetsignore');
-    fs.writeFileSync(assetsIgnorePath, '_worker.js\n');
-    console.log("=> Created .assetsignore to prevent _worker.js static asset upload error.");
+    execSync('npx @opennextjs/cloudflare', { stdio: 'inherit' });
   }
 } catch (error) {
   console.error("Build failed:", error.message);
