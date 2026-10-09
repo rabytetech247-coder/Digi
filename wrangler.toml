@@ -18,4 +18,4 @@ bucket_name = "rabyte-store-assets"
 
 [[kv_namespaces]]
 binding = "KV"
-id = "78a1bc4903df4819a9d94318c4e09f12"
+id = "d77e4aec3bc34a148a853a3d7c9097af"
