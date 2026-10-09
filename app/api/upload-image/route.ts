@@ -1,3 +1,4 @@
+export const runtime = 'edge';
 import { NextRequest, NextResponse } from "next/server";
 import { getAssetsBucket, getDb } from "@/lib/db";
 import { getCurrentUser } from "@/lib/auth";
@@ -46,3 +47,4 @@ export async function POST(request: NextRequest) {
 
   return NextResponse.redirect(new URL(`/dashboard/products/${productId}`, request.url));
 }
+
