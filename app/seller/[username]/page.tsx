@@ -4,6 +4,8 @@ import { getDb } from "@/lib/db";
 import { notFound } from "next/navigation";
 import type { User, Product } from "@/lib/db-types";
 
+export const runtime = 'edge';
+
 export async function generateMetadata({ params }: { params: Promise<{ username: string }> }) {
   const { username } = await params;
   const db = getDb();

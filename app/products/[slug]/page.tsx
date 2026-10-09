@@ -8,6 +8,8 @@ import ReviewForm from "./ReviewForm";
 import AnalyticsTracker from "./AnalyticsTracker";
 import OutboundLink from "./OutboundLink";
 
+export const runtime = 'edge';
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const db = getDb();

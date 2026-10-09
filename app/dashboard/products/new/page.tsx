@@ -2,13 +2,24 @@
 
 import PageShell from "@/components/PageShell";
 import { Field } from "@/components/Forms";
-import { useActionState } from "react";
+import { useFormState, useFormStatus } from "react-dom";
 import { importProductAction } from "@/app/actions/product-actions";
 import Icon from "@/components/Icon";
 import Script from "next/script";
 
+function SubmitButton() {
+  const { pending } = useFormStatus();
+  return (
+    <button type="submit" className="button" disabled={pending} style={{marginTop: 15}}>
+      {pending ? "Importing Data..." : (
+        <><Icon name="download" size={16} /> Fetch Product Details</>
+      )}
+    </button>
+  );
+}
+
 export default function NewProduct() {
-  const [state, action, isPending] = useActionState(importProductAction, undefined);
+  const [state, action] = useFormState(importProductAction, undefined);
 
   return (
     <PageShell>
@@ -41,11 +52,7 @@ export default function NewProduct() {
 
               <div className="cf-turnstile" data-sitekey="1x00000000000000000000AA" style={{marginTop: 15}}></div>
 
-              <button type="submit" className="button" disabled={isPending} style={{marginTop: 15}}>
-                {isPending ? "Importing Data..." : (
-                  <><Icon name="download" size={16} /> Fetch Product Details</>
-                )}
-              </button>
+              <SubmitButton />
             </form>
           </section>
         </div>

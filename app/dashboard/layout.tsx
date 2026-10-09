@@ -2,6 +2,8 @@ import PageShell from "@/components/PageShell";
 import { getCurrentUser } from "@/lib/auth";
 import { redirect } from "next/navigation";
 
+export const runtime = 'edge';
+
 export default async function DashboardLayout({ children }: { children: React.ReactNode }) {
   const user = await getCurrentUser();
   if (!user) return redirect("/login");

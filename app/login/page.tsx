@@ -3,12 +3,24 @@
 import Link from "next/link";
 import PageShell from "@/components/PageShell";
 import { Field } from "@/components/Forms";
-import { useActionState, useEffect } from "react";
+import { useEffect } from "react";
+import { useFormState, useFormStatus } from "react-dom";
 import { loginAction } from "@/app/actions/auth-actions";
 import Script from "next/script";
 
+function SubmitButton() {
+  const { pending } = useFormStatus();
+  return (
+    <button type="submit" className="button" disabled={pending} style={{marginTop: 15}}>
+      {pending ? "Logging in..." : "Log in"}
+    </button>
+  );
+}
+
+export const runtime = 'edge';
+
 export default function Login() {
-  const [state, action, isPending] = useActionState(loginAction, undefined);
+  const [state, action] = useFormState(loginAction, undefined);
 
   return (
     <PageShell>
@@ -23,9 +35,7 @@ export default function Login() {
           
           <div className="cf-turnstile" data-sitekey="1x00000000000000000000AA" style={{marginTop: 10}}></div>
           
-          <button type="submit" className="button" disabled={isPending} style={{marginTop: 15}}>
-            {isPending ? "Logging in..." : "Log in"}
-          </button>
+          <SubmitButton />
           <Link href="/forgot-password">Forgot password?</Link>
           <p>New here? <Link href="/register">Create an account</Link></p>
         </form>

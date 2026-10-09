@@ -1,10 +1,19 @@
 "use client";
 
-import { useActionState } from "react";
+import { useFormState, useFormStatus } from "react-dom";
 import { submitReviewAction } from "@/app/actions/review-actions";
 
+function SubmitButton() {
+  const { pending } = useFormStatus();
+  return (
+    <button type="submit" className="button" disabled={pending} style={{ padding: "8px 16px", fontSize: 13 }}>
+      {pending ? "Submitting..." : "Submit Review"}
+    </button>
+  );
+}
+
 export default function ReviewForm({ productId }: { productId: string }) {
-  const [state, action, isPending] = useActionState(submitReviewAction, undefined);
+  const [state, action] = useFormState(submitReviewAction, undefined);
 
   return (
     <form action={action} style={{ marginTop: 25, background: "#f9f9f9", padding: 20, borderRadius: 8, border: "1px solid var(--bd)" }}>
@@ -29,9 +38,7 @@ export default function ReviewForm({ productId }: { productId: string }) {
         <textarea name="reviewText" rows={3} placeholder="What did you think of this product?" style={{ width: "100%", padding: 8, borderRadius: 6, border: "1px solid var(--bd)", fontFamily: "inherit" }}></textarea>
       </div>
 
-      <button type="submit" className="button" disabled={isPending} style={{ padding: "8px 16px", fontSize: 13 }}>
-        {isPending ? "Submitting..." : "Submit Review"}
-      </button>
+      <SubmitButton />
     </form>
   );
 }

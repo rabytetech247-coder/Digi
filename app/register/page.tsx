@@ -2,12 +2,23 @@
 
 import PageShell from "@/components/PageShell";
 import { Field } from "@/components/Forms";
-import { useActionState } from "react";
+import { useFormState, useFormStatus } from "react-dom";
 import { registerAction } from "@/app/actions/auth-actions";
 import Script from "next/script";
 
+function SubmitButton() {
+  const { pending } = useFormStatus();
+  return (
+    <button type="submit" className="button" disabled={pending} style={{marginTop: 15}}>
+      {pending ? "Creating account..." : "Create account"}
+    </button>
+  );
+}
+
+export const runtime = 'edge';
+
 export default function Register() {
-  const [state, action, isPending] = useActionState(registerAction, undefined);
+  const [state, action] = useFormState(registerAction, undefined);
 
   return (
     <PageShell>
@@ -24,9 +35,7 @@ export default function Register() {
           
           <div className="cf-turnstile" data-sitekey="1x00000000000000000000AA" style={{marginTop: 10}}></div>
 
-          <button type="submit" className="button" disabled={isPending} style={{marginTop: 15}}>
-            {isPending ? "Creating account..." : "Create account"}
-          </button>
+          <SubmitButton />
           <p>One account works as both buyer and seller.</p>
         </form>
       </section>
