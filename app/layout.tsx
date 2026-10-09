@@ -6,9 +6,9 @@ import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata:Metadata={title:"Rabyte-Tech | Digital Product Discovery",description:"Discover digital products, tools, templates, courses and creator resources."};
+export const metadata:Metadata={title:"Rabyte-Tech | The Zero-Fee Digital Product Marketplace",description:"Discover top-tier digital products, AI tools, templates, and courses. Creators can list their products for free and keep 100% of their revenue."};
 
-export const runtime = 'edge';
+
 
 export default function RootLayout({children}:{children:React.ReactNode}){
   return (
