@@ -10,7 +10,7 @@ directory = ".vercel/output/static"
 [[d1_databases]]
 binding = "DB"
 database_name = "rabyte_d1"
-database_id = "4901e8f2-89da-41b4-b841-893d18e9a4f4"
+database_id = "bbe9d60f-fd8d-4ae9-b772-33180c1b17b8"
 
 [[r2_buckets]]
 binding = "ASSETS_BUCKET"
