@@ -24,7 +24,7 @@ export default async function AdminCategories() {
         {categories.results?.length === 0 ? (
           <div className="notice">No categories found.</div>
         ) : (
-          categories.results?.map((cat) => (
+          categories.results?.map((cat: any) => (
             <div className="fake-row" key={cat.id} style={{ display: 'grid', gridTemplateColumns: '1fr 2fr auto', gap: '10px' }}>
               <div>
                 <b>{cat.name}</b>

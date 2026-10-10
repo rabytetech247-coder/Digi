@@ -34,7 +34,7 @@ export default async function AdminPanel() {
         {pendingProducts.results?.length === 0 ? (
           <div className="notice">No pending submissions.</div>
         ) : (
-          pendingProducts.results?.map((prod) => (
+          pendingProducts.results?.map((prod: any) => (
             <div className="fake-row" key={prod.id}>
               <b>{prod.title}</b>
               <span>by @{prod.seller_name}</span>

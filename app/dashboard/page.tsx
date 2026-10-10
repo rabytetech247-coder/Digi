@@ -41,7 +41,7 @@ export default async function Dashboard() {
         {products.length === 0 ? (
           <div className="notice">You haven't listed any products yet.</div>
         ) : (
-          products.map(p => (
+          products.map((p: any) => (
             <div key={p.id} className="fake-row" style={{alignItems:"center"}}>
               <div>
                 <b>{p.title}</b>

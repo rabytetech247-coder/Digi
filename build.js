@@ -12,7 +12,7 @@ try {
     // We are at the top level Cloudflare CI execution step
     console.log("=> Running OpenNext Cloudflare builder...");
     process.env.INTERNAL_NEXT_BUILD = 'true';
-    execSync('npx @opennextjs/cloudflare build', { stdio: 'inherit' });
+    execSync('npx @opennextjs/cloudflare build --dangerouslyUseUnsupportedNextVersion', { stdio: 'inherit' });
   }
 } catch (error) {
   console.error("Build failed:", error.message);

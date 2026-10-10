@@ -23,7 +23,7 @@ export default async function AdminProducts() {
         {products.results?.length === 0 ? (
           <div className="notice">No products found.</div>
         ) : (
-          products.results?.map((prod) => (
+          products.results?.map((prod: any) => (
             <div className="fake-row" key={prod.id} style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 1fr auto', gap: '10px' }}>
               <div>
                 <b>{prod.title}</b>

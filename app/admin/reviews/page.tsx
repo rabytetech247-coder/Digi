@@ -22,7 +22,7 @@ export default async function AdminReviews() {
         {reviews.results?.length === 0 ? (
           <div className="notice">No reviews submitted yet.</div>
         ) : (
-          reviews.results?.map((rev) => (
+          reviews.results?.map((rev: any) => (
             <div className="fake-row" key={rev.id} style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                 <div>

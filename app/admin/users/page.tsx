@@ -22,7 +22,7 @@ export default async function AdminUsers() {
         {users.results?.length === 0 ? (
           <div className="notice">No users found.</div>
         ) : (
-          users.results?.map((user) => (
+          users.results?.map((user: any) => (
             <div className="fake-row" key={user.id} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr auto', gap: '10px' }}>
               <div>
                 <b>{user.name || user.username}</b>

@@ -23,7 +23,7 @@ export default async function AdminSubmissions() {
         {pendingProducts.results?.length === 0 ? (
           <div className="notice">No pending submissions at this time.</div>
         ) : (
-          pendingProducts.results?.map((prod) => (
+          pendingProducts.results?.map((prod: any) => (
             <div className="fake-row" key={prod.id} style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr auto', gap: '10px' }}>
               <div>
                 <b>{prod.title}</b>
