@@ -1,8 +1,8 @@
 "use server";
 
 import { redirect } from "next/navigation";
-import { getDb } from "@/lib/db";
-import { getCurrentUser } from "@/lib/auth";
+import { getDb } from "../../lib/db";
+import { getCurrentUser } from "../../lib/auth";
 
 export async function moderateProductAction(formData: FormData): Promise<void> {
   const user = await getCurrentUser();

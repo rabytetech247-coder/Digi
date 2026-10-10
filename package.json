@@ -3,35 +3,24 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "node build.js",
     "dev": "next dev",
+    "build": "next build",
     "start": "next start",
-    "preview": "opennextjs-cloudflare build --dangerouslyUseUnsupportedNextVersion && opennextjs-cloudflare preview",
-    "deploy": "opennextjs-cloudflare build --dangerouslyUseUnsupportedNextVersion && opennextjs-cloudflare deploy",
-    "upload": "opennextjs-cloudflare build --dangerouslyUseUnsupportedNextVersion && opennextjs-cloudflare upload",
-    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
+    "pages:build": "npx @cloudflare/next-on-pages",
+    "pages:deploy": "npm run pages:build && wrangler pages deploy .vercel/output/static --project-name rabyte-tech"
   },
   "dependencies": {
-    "bcrypt-ts": "^9.0.2",
-    "dotenv": "^18.0.6",
-    "drizzle-orm": "^0.45.4",
-    "next": "14.2.15",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "lucide-react": "^1.54.0",
+    "next": "^15.5.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^5.20261008.1",
-    "@opennextjs/cloudflare": "^1.20.10",
-    "@tailwindcss/postcss": "^4.3.3",
-    "@types/bcryptjs": "^2.4.6",
+    "@cloudflare/next-on-pages": "^1.13.16",
+    "@cloudflare/workers-types": "^5.20261010.1",
     "@types/node": "^22.0.0",
-    "@types/react": "^18.3.12",
-    "@types/react-dom": "^18.3.1",
-    "autoprefixer": "^10.6.1",
-    "drizzle-kit": "^0.31.11",
-    "lucide-react": "^1.52.0",
-    "postcss": "^8.5.29",
-    "tailwindcss": "^4.3.3",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
     "typescript": "^5.0.0",
     "wrangler": "^4.149.0"
   }

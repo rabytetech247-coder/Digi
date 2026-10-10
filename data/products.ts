@@ -1,19 +1,22 @@
 export type Product={id:string;title:string;description:string;category:string;price:string;rating:string;reviews:number;image:string;seller:string;source:string;badge?:string};
-
 export const categories=[
-  {name:"AI Systems",count:"340+",icon:"/images/categories/ai.svg",description:"Autonomous agents, RAG workflows, and LLM fine-tuning."},
-  {name:"SaaS Templates",count:"850+",icon:"/images/categories/templates.svg",description:"Next.js, React, and full-stack boilerplates with DB & Auth."},
-  {name:"Web3 & Crypto",count:"120+",icon:"/images/categories/business.svg",description:"Smart contracts, dApp UI kits, and Web3 authentication."},
-  {name:"UI/UX Design",count:"1,760+",icon:"/images/categories/design.svg",description:"High-conversion UI kits, dashboards, and Figma components."},
-  {name:"Backend APIs",count:"450+",icon:"/images/categories/courses.svg",description:"Microservices, gRPC templates, and event-driven architectures."},
-  {name:"Data Pipelines",count:"210+",icon:"/images/categories/ebook.svg",description:"ETL scripts, real-time analytics, and data automation."}
+{name:"eBooks",count:"12K+",icon:"/images/categories/ebook.svg",description:"Practical books, guides and playbooks."},
+{name:"Software",count:"8.5K+",icon:"/images/categories/software.svg",description:"Apps, plugins and developer tools."},
+{name:"Templates",count:"15K+",icon:"/images/categories/templates.svg",description:"Ready-to-use templates for work and creators."},
+{name:"Courses",count:"9.8K+",icon:"/images/categories/courses.svg",description:"Courses and learning resources."},
+{name:"AI Tools",count:"7.2K+",icon:"/images/categories/ai.svg",description:"AI software, assistants and creator utilities."},
+{name:"Prompt Packs",count:"4.3K+",icon:"/images/categories/prompt.svg",description:"Curated prompts for Midjourney, ChatGPT, etc."},
+{name:"Design Resources",count:"11K+",icon:"/images/categories/design.svg",description:"UI kits, graphics and design systems."},
+{name:"Marketing",count:"6.5K+",icon:"/images/categories/marketing.svg",description:"SEO, social media and marketing templates."},
+{name:"Business",count:"8.9K+",icon:"/images/categories/business.svg",description:"Business, finance and growth resources."},
+{name:"Education",count:"5.4K+",icon:"/images/categories/education.svg",description:"Educational materials and study guides."},
+{name:"Productivity",count:"7.8K+",icon:"/images/categories/productivity.svg",description:"Tools and systems to get more done."},
+{name:"Other",count:"3.2K+",icon:"/images/categories/other.svg",description:"Miscellaneous digital products and assets."}
 ];
-
 export const products:Product[]=[
-  {id:"1",title:"Next.js SaaS Boilerplate",description:"Complete full-stack template with Drizzle ORM, Stripe, Auth, and Tailwind.",category:"SaaS Templates",price:"$149",rating:"4.9",reviews:128,image:"/images/products/saas-ui-kit.svg",seller:"Devi Systems",source:"Lemon Squeezy",badge:"Trending"},
-  {id:"2",title:"RAG Workflow Enterprise Template",description:"Vector search integration with Pinecone and LangChain for production use.",category:"AI Systems",price:"$79",rating:"4.8",reviews:94,image:"/images/products/ai-content-vault.svg",seller:"AI Architects",source:"Gumroad",badge:"Popular"},
-  {id:"3",title:"Web3 Auth & Token Portal",description:"React components for decentralized login and token-based ecosystems.",category:"Web3 & Crypto",price:"$49",rating:"5.0",reviews:67,image:"/images/products/lead-generation.svg",seller:"BlockForge",source:"Payhip"},
-  {id:"4",title:"FastAPI Microservices Kit",description:"Event-driven backend architectures using Kafka and Python FastAPI.",category:"Backend APIs",price:"$55",rating:"4.7",reviews:51,image:"/images/products/instagram-growth.svg",seller:"Devi Systems",source:"Gumroad"},
-  {id:"5",title:"Conversion-Focused Dashboard UI",description:"Sleek dark mode dashboards, glassmorphism elements, and data charts.",category:"UI/UX Design",price:"$39",rating:"4.9",reviews:203,image:"/images/products/youtube-thumbnail.svg",seller:"Pixel Foundry",source:"Lemon Squeezy"},
-  {id:"6",title:"Real-time ETL Analytics Pipeline",description:"Self-optimizing data pipelines for scalable business analytics.",category:"Data Pipelines",price:"$99",rating:"4.8",reviews:76,image:"/images/products/creator-playbook.svg",seller:"DataOps Pro",source:"Lemon Squeezy"}
-];
+{id:"1",title:"AI Content Creator Vault",description:"Prompts, hooks, captions and content systems for creators.",category:"AI Tools",price:"$19",rating:"4.9",reviews:128,image:"/images/products/ai-content-vault.svg",seller:"Creator Labs",source:"Gumroad",badge:"Trending"},
+{id:"2",title:"Instagram Growth Toolkit",description:"Templates, calendars and growth workflows for consistent publishing.",category:"Templates",price:"$12",rating:"4.8",reviews:94,image:"/images/products/instagram-growth.svg",seller:"Growth Studio",source:"Payhip",badge:"Popular"},
+{id:"3",title:"Modern SaaS UI Kit",description:"Clean landing page sections and dashboard components for SaaS products.",category:"Design",price:"$29",rating:"5.0",reviews:67,image:"/images/products/saas-ui-kit.svg",seller:"Pixel Foundry",source:"Lemon Squeezy"},
+{id:"4",title:"Freelancer Lead Generation Kit",description:"Lead research sheets, outreach scripts and follow-up workflows.",category:"Business",price:"$15",rating:"4.7",reviews:51,image:"/images/products/lead-generation.svg",seller:"Freelance Engine",source:"CosmoFit"},
+{id:"5",title:"YouTube Thumbnail Pack",description:"High-converting thumbnail layouts for creators.",category:"Graphics",price:"$9",rating:"4.9",reviews:203,image:"/images/products/youtube-thumbnail.svg",seller:"Thumbnail House",source:"Gumroad"},
+{id:"6",title:"Creator Business Playbook",description:"A structured guide to products, funnels and recurring revenue.",category:"eBooks",price:"$24",rating:"4.8",reviews:76,image:"/images/products/creator-playbook.svg",seller:"Indie Builder",source:"Lemon Squeezy"}];

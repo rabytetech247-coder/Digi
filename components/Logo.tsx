@@ -1,9 +1,1 @@
-import Link from "next/link";
-
-export default function Logo() {
-  return (
-    <Link href="/" className="brand" style={{ display: "flex", alignItems: "center" }}>
-      <img src="/logo.png" alt="Rabyte-Tech" style={{ height: "40px", width: "auto" }} />
-    </Link>
-  );
-}
+import Link from "next/link";export default function Logo(){return <Link href="/" className="brand"><span className="brand-mark">R</span><span>Rabyte<span className="orange">-Tech</span></span></Link>}
