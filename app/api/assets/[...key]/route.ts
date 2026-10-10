@@ -13,7 +13,7 @@ export async function GET(request: NextRequest, { params }: { params: Promise<{ 
   if (!object) return new NextResponse("Not Found", { status: 404 });
 
   const headers = new Headers();
-  object.writeHttpMetadata(headers);
+  object.writeHttpMetadata(headers as any);
   headers.set("etag", object.httpEtag);
 
   return new NextResponse(object.body as any, {
