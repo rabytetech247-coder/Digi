@@ -45,10 +45,10 @@ export default async function Seller({ params }: { params: Promise<{ username: s
   
   // Calculate average rating
   const avgRating = products.length > 0 
-    ? (products.reduce((acc, p) => acc + (p.source_rating || 0), 0) / products.length).toFixed(1)
+    ? (products.reduce((acc: any, p: any) => acc + (p.source_rating || 0), 0) / products.length).toFixed(1)
     : "0.0";
     
-  const totalReviews = products.reduce((acc, p) => acc + (p.source_review_count || 0), 0);
+  const totalReviews = products.reduce((acc: any, p: any) => acc + (p.source_review_count || 0), 0);
 
   return (
     <PageShell>

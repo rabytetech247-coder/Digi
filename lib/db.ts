@@ -1,4 +1,5 @@
 import { getCloudflareContext } from "@opennextjs/cloudflare";
+import type { D1Database, KVNamespace, R2Bucket } from "@cloudflare/workers-types";
 
 export function getDb(): D1Database {
   const { env } = getCloudflareContext();
