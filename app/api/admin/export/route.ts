@@ -27,9 +27,9 @@ export async function GET(request: Request) {
 
   // Convert JSON to CSV
   const headers = Object.keys(data[0]).join(",");
-  const rows = data.map(row => 
+  const rows = data.map((row: any) => 
     Object.values(row)
-      .map(val => typeof val === "string" ? `"${val.replace(/"/g, '""')}"` : val)
+      .map((val: any) => typeof val === "string" ? `"${val.replace(/"/g, '""')}"` : val)
       .join(",")
   );
   

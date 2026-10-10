@@ -39,7 +39,7 @@ export default async function Seller({ params }: { params: Promise<{ username: s
   const products = (await db.prepare("SELECT * FROM products WHERE seller_id = ? AND status = 'active' ORDER BY created_at DESC").bind(user.id).all<Product>()).results || [];
 
   // Generate dynamic category chips
-  const categoryIds = [...new Set(products.map(p => p.category_id).filter(Boolean))];
+  const categoryIds = [...new Set(products.map((p: any) => p.category_id).filter(Boolean))];
   // Normally you'd join categories, but for now we'll just show the IDs or a placeholder chip if they exist.
   // Assuming products have category_id populated properly.
   
@@ -67,7 +67,7 @@ export default async function Seller({ params }: { params: Promise<{ username: s
           
           {categoryIds.length > 0 && (
             <div style={{ marginTop: 20, display: "flex", gap: 10 }}>
-              {categoryIds.map(cid => (
+              {categoryIds.map((cid: any) => (
                 <span key={cid} style={{ background: "#222", padding: "4px 10px", borderRadius: 20, fontSize: 11, fontWeight: "bold" }}>
                   Category ID: {cid}
                 </span>
@@ -82,7 +82,7 @@ export default async function Seller({ params }: { params: Promise<{ username: s
           <p>This seller hasn't published any products yet.</p>
         ) : (
           <div className="products">
-            {products.map(p => (
+            {products.map((p: any) => (
               <ProductCard key={p.id} p={p as any} /> 
             ))}
           </div>
